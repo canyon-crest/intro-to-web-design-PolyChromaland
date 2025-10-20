@@ -1,13 +1,13 @@
 body{
-    background-color: rgb(204, 177, 249);
-    color: rgb(23, 4, 125);
+    background-color: rgb(229, 107, 111);
+    color: rgb(34, 64, 100);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin: 0;
 }
 #container{
     width: 1000px;
     margin: 0 auto;
-    background-color: rgb(249, 159, 229);
+    background-color: rgb(234, 172, 139);
     padding: 40px;
     border-left: #fff solid 5px;
     border-right: #fff solid 5px;
@@ -29,11 +29,16 @@ h2{
     font-style: italic;
 }
 h3{
-    border-left: double 20px rgb(3, 129, 76);
+    background-color: antiquewhite;
+    border-bottom: solid 5px rgb(34, 64, 100);
+    border-left: solid 10px rgb(109, 89, 122);
     border-radius: 30px;
     padding-left: 15px;
+    width: 15%;
+    margin 30px;
 }
 p{
+    font-size: 1.05em;
     line-height: 2.2em;
 }
 img{
@@ -81,7 +86,7 @@ h3:hover{
     background-color: aquamarine;
 }
 #sidebar{
-    background-color: antiquewhite;
+    background-color: rgb(249, 223, 144);
     width: 225px;
     float:right;
     border: 2px solid blueviolet;
