@@ -14,11 +14,12 @@ body{
 }
 h1{
     background-color: rgb(249, 223, 144);
-    border: #fff, solid, 3px;
+    border: rgb(241, 124, 128), solid, 10px;
+    border-style:ridge;
     border-radius: 15px;
     padding: 20px;
     margin-bottom: 30px;
-    width: 60%;
+    width: 30%;
     text-align: center;
     margin: 0px auto;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -31,7 +32,7 @@ h2{
 h3{
     background-color: antiquewhite;
     border-bottom: solid 5px rgb(34, 64, 100);
-    border-left: solid 10px rgb(109, 89, 122);
+    border-left: solid 7px rgb(109, 89, 122);
     border-radius: 30px;
     padding-left: 15px;
     width: 15%;
@@ -40,46 +41,49 @@ h3{
 p{
     font-size: 1.05em;
     line-height: 2.2em;
+    background-color: antiquewhite;
+    padding: 10px;
+    border: rgb(181, 101, 114) double 15px;
+    border-bottom: rgb(34, 64, 100) 15px solid;
 }
 img{
     float: left;
-    width: 300px;
-    border: #fff solid 3px;
-    border-radius: 15px;
+    width: 320px;
+    border: rgb(109, 89, 122) solid 5px;
+    border-radius: 20px;
     margin-right: 20px;
 }
 a:link{
-    color: blue;
+    color: rgb(255, 0, 174);
     text-decoration: none;
     font-weight: bold;
 }
 a:visited{
-    color: rgb(45, 74, 241);
+    color: rgb(112, 11, 184);
 }
 a:hover{
-    color:chartreuse;
+    color:rgb(112, 155, 246);
     text-decoration: underline;
 }
 a:active{
-    color:rgb(3, 129, 76);
+    color:rgb(248, 85, 232);
 }
 h3:hover{
     border-color: aquamarine;
 }
 #pic1{
-    border: none;
-    width: 200px;
+    width: 300px;
 }
 #pic2{
     float: right;
     margin-right: 0;
     margin-left: 20px;
+    width: 300px;
 }
 
 .highlight{
     font-weight: bold;
-    background-color: yellow;
-    border: #fff solid 3px;
+    background-color: rgb(249, 223, 144);
     border-radius: 15px;
 }
 .highlight:hover{
@@ -87,11 +91,13 @@ h3:hover{
 }
 #sidebar{
     background-color: rgb(249, 223, 144);
-    width: 225px;
+    width: 250px;
     float:right;
-    border: 2px solid blueviolet;
+    border: 5px solid rgb(109, 89, 122);
+    border-radius: 15px;
     margin: 30px;
-    line-height: 2.25em;
+    line-height: 2.05em;
+    font-size: 1.05em;
 }
 #sidebar h3{
     padding: 5px;
@@ -100,7 +106,7 @@ h3:hover{
 }
 @media (max-width:1200px){
     #container{
-        background-color: rgb(156, 12, 151);
+        background-color: rgb(218, 85, 241);
         width:800px;
     }
 }
@@ -114,7 +120,7 @@ h3:hover{
         border: none;
     }
     body,h1,h2,h3,p,div{
-        background-color: aqua !important;
+        background-color: rgb(255, 234, 192) !important;
         border:none;
     }
     body{
