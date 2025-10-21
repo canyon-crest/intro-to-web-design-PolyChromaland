@@ -9,8 +9,12 @@ body{
     margin: 0 auto;
     background-color: rgb(234, 172, 139);
     padding: 40px;
+    padding-bottom: 25px;
     border-left: #fff solid 5px;
     border-right: #fff solid 5px;
+    border-bottom: #fff solid 5px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 h1{
     background-color: rgb(249, 223, 144);
@@ -36,7 +40,6 @@ h3{
     border-radius: 30px;
     padding-left: 15px;
     width: 15%;
-    margin 30px;
 }
 p{
     font-size: 1.05em;
@@ -69,7 +72,7 @@ a:active{
     color:rgb(248, 85, 232);
 }
 h3:hover{
-    border-color: aquamarine;
+    border-color: rgb(251, 140, 112);
 }
 #pic1{
     width: 300px;
@@ -87,7 +90,7 @@ h3:hover{
     border-radius: 15px;
 }
 .highlight:hover{
-    background-color: aquamarine;
+    background-color: rgb(251, 194, 191);
 }
 #sidebar{
     background-color: rgb(249, 223, 144);
@@ -106,7 +109,7 @@ h3:hover{
 }
 @media (max-width:1200px){
     #container{
-        background-color: rgb(218, 85, 241);
+        background-color: rgb(200, 140, 222);
         width:800px;
     }
 }
@@ -120,27 +123,36 @@ h3:hover{
         border: none;
     }
     body,h1,h2,h3,p,div{
-        background-color: rgb(255, 234, 192) !important;
+        background-color: rgb(253, 221, 255) !important;
         border:none;
+    }
+    #pic2 {
+        float: left;
+        margin: 0 20px 20px 0;
     }
     body{
         padding:20px;
     }
-    #sidebar h3{
-        color: black;
+    #sidebar{
+        background-color: rgb(248, 178, 180) !important;
     }
 }
 @media (max-width:768px){
+        body,h1,h2,h3,p,div{
+        background-color: rgb(255, 244, 198) !important;
+        border:none;
+    }
     #sidebar{
         display: none;
     }
     img, #pic1,#pic2{
-        float:none;
-        border:none;
-        width:100%;
+        border: solid 5px rgb(252, 252, 252);
+        width:40%;
     }
     h3{
         margin:10px auto;
+        width:50%;
+        text-align:center;
     }
 }
 
@@ -152,4 +164,58 @@ h3:hover{
 }
 @keyframes slideUpFade {
   to { opacity: 1; transform: translateY(0); }
+}
+/* simple CSS-only lightbox using :target */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,.75);
+  z-index: 9999;
+  padding: 16px;
+}
+.lightbox:target { display: flex; }
+.lightbox img { max-width: 95%; max-height: 90%; border-radius: 6px; }
+.lightbox .close {
+  position: absolute; top: 12px; right: 14px; color: #fff; font-size: 28px; text-decoration: none;
+}
+img { cursor: zoom-in; } /* optional */
+
+/* footer + social icon styles */
+#site-footer {
+  text-align: center;
+  padding: 24px 12px;
+  margin-top: 32px;
+  color: rgb(34,64,100);
+  background: rgba(255,255,255,0.02);
+}
+#site-footer .social { margin-bottom: 10px; }
+#site-footer .social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin: 0 8px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+  transition: transform .18s ease, box-shadow .18s ease;
+  color: rgb(109,89,122);
+  text-decoration: none;
+}
+#site-footer .social a svg { width: 22px; height: 22px; fill: currentColor; }
+#site-footer .social a:hover,
+#site-footer .social a:focus {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+  outline: none;
+}
+#site-footer p { margin: 0; font-size: .9rem; opacity: .85; }
+
+/* respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  #site-footer .social a { transition: none; transform: none; }
 }
