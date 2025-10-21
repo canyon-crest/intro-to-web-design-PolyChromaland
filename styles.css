@@ -219,3 +219,92 @@ img { cursor: zoom-in; } /* optional */
 @media (prefers-reduced-motion: reduce) {
   #site-footer .social a { transition: none; transform: none; }
 }
+
+h1 {
+  position: sticky;
+  top: 0;                 /* where it sticks */
+  z-index: 1000;          /* stay above other content */
+  background: rgb(249, 223, 144);
+  backdrop-filter: blur(6px); /* optional visual polish */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 12px 20px;
+}
+
+/* Silly mode: playful gradient, floating emojis, wobble h2, bouncy/spinning images */
+:root{
+  --silly-1: #fc9bad;
+  --silly-2: #ffd480;
+  --silly-3: #b8eaff;
+  --silly-4: #d6b3ff;
+}
+
+@keyframes gradientShift {
+  0%  { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100%{ background-position: 0% 50%; }
+}
+body {
+  background: linear-gradient(120deg, var(--silly-1), var(--silly-2), var(--silly-3), var(--silly-4));
+  background-size: 300% 300%;
+  animation: gradientShift 14s ease infinite;
+}
+
+/* floating emoji parade */
+body::after{
+  content: " 🎷 🐛 ✨                                   ";
+  position: fixed;
+  left: -30%;
+  top: 8%;
+  font-size: 28px;
+  pointer-events: none;
+  transform: translateX(0) rotate(0deg);
+  animation: emojiFloat 10s linear infinite;
+}
+@keyframes emojiFloat {
+  0%   { transform: translateX(-30vw) rotate(-10deg); }
+  50%  { transform: translateX(120vw) rotate(10deg); }
+  100% { transform: translateX(-30vw) rotate(-10deg); }
+}
+
+/* sillier h2 */
+
+}
+@keyframes hueShift {
+  0%   { filter: hue-rotate(0deg); }
+  50%  { filter: hue-rotate(90deg); }
+  100% { filter: hue-rotate(0deg); }
+}
+
+/* bouncy images and spin on hover */
+img{
+  transition: transform .6s ease, filter .6s ease;
+  animation: gentleBob 5s ease-in-out infinite;
+  transform-origin: center;
+}
+img:hover{
+  transform: translateY(-8px) rotate(6deg) scale(1.06);
+  filter: drop-shadow(0 12px 24px rgba(0,0,0,0.18)) saturate(1.05);
+}
+@keyframes gentleBob {
+  0%   { transform: translateY(0) rotate(0deg); }
+  50%  { transform: translateY(-6px) rotate(-2deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* tiny wiggly h3 on hover */
+h3:hover{
+  animation: quickWiggle .6s ease;
+}
+@keyframes quickWiggle {
+  0%   { transform: rotate(0deg); }
+  20%  { transform: rotate(-4deg); }
+  60%  { transform: rotate(4deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  body { animation: none; background-attachment: fixed; }
+  body::after{ display:none; }
+  h2, img, h3 { animation: none !important; transform: none !important; transition: none !important; filter: none !important; }
+}
